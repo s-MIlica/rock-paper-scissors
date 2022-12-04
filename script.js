@@ -19,24 +19,24 @@ let playerChoice;
 
 function playRound (playerSelection, computerSelection) { //take user's choice from a promt and compare it with a computer's choice
     playerChoice = prompt("Choose your weapon! rock, paper or scissors, what will it be?", "rock"); //activate the promt for user to make their choice
-    playerSelection = playerChoice; //give playerSelection value of promt the user makes
-    console.log(playerSelection.toLowerCase() + " player's selection");
+    playerSelection = playerChoice.toLowerCase(); //give playerSelection value of promt the user makes
+    console.log(playerSelection + " player's selection");
     computerSelection = getComputerChoice();         //using the getComputerChoice function to get random computer's choice 
     console.log(computerSelection + " computer's selection");
     let roundResult; //declaring the variable for round's results
 
-    if (playerSelection.toLowerCase() == computerSelection) {  //in case of a draw
+    if (playerSelection == computerSelection) {  //in case of a draw
         return roundResult = "It's a draw"
-    } else if ( playerSelection.toLowerCase() === "paper" && computerSelection == "rock" ||     //in case of a user win
-                playerSelection.toLowerCase() === "scissors" && computerSelection == "paper" ||
-                playerSelection.toLowerCase() === "rock" && computerSelection == "scissors") {
+    } else if ( playerSelection === "paper" && computerSelection == "rock" ||     //in case of a user win
+                playerSelection === "scissors" && computerSelection == "paper" ||
+                playerSelection === "rock" && computerSelection == "scissors") {
         return roundResult = "You win!"
 
-    } else if ( playerSelection.toLowerCase() === "paper" && computerSelection == "scissors" ||     //in case of a computer win
-                playerSelection.toLowerCase() === "scissors" && computerSelection == "rock" || 
-                playerSelection.toLowerCase() === "rock" && computerSelection == "paper") {
+    } else if ( playerSelection === "paper" && computerSelection == "scissors" ||     //in case of a computer win
+                playerSelection === "scissors" && computerSelection == "rock" || 
+                playerSelection === "rock" && computerSelection == "paper") {
         return roundResult = "Computer's win!"
-    } else if (playerSelection.toLowerCase() != "paper" || playerSelection.toLowerCase() != "rock" || playerSelection.toLowerCase() != "scissors") { //in case the user didn't type in the choice correctly
+    } else if (playerSelection != "paper" || playerSelection != "rock" || playerSelection != "scissors") { //in case the user didn't type in the choice correctly
         return roundResult = "you must only choose between rock, paper or scissors!"
     }
 }
